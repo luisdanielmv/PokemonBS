@@ -1,9 +1,24 @@
-.modal {
-  opacity: .66;
+.details {
+  padding-top: 5vh;
+  opacity: .85;
   background-color: black;
+  color: white;
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
+}
+
+.details .main {
+  background-color: black;
+}
+
+.details header {
+  text-align: center;
+}
+
+.nature {
+  padding: 0 15px;
 }

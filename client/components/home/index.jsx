@@ -23,13 +23,10 @@ class Home extends Component {
     }
 
     render () {
-        let {pokemonList, searchTerm, selectPokemon, selectedPokemon} = this.props;
-        return (
-            !!selectedPokemon ? 
-            <div className="row">
-                <Details pokemon={selectedPokemon}/>
-            </div> :               
-            <div className="row">
+        let {pokemonList, searchTerm, selectPokemon, selectedPokemon, loading } = this.props;
+        return (            
+            <div className="row relativize">
+                {!!selectedPokemon.id && <Details pokemon={selectedPokemon} selectPokemon = {selectPokemon}/>}
                 { !!pokemonList && pokemonList.map((pokemon) => {
                     return (
                         !!pokemon.name && (pokemon.name + (!!pokemon.types[0] ? pokemon.types[0].type.name : '') + (!!pokemon.types[1] ? pokemon.types[1].type.name : '')).includes(searchTerm) &&
@@ -40,6 +37,15 @@ class Home extends Component {
                         />
                     )
                 })}
+                {loading &&
+                    <div className={`col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4`}>
+                        <div className="panel panel-primary panel-loading">
+                            <div className={`panel-body`}>
+                                <img className={`loading-img`} src="http://ispokemongodownornot.com/pikachu.gif" alt="Loading"/>
+                            </div>
+                        </div>
+                    </div>
+                    }
             </div>
         );
     }

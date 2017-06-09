@@ -25,7 +25,7 @@ class Card extends Component {
         
         return (
             <div className={`col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4`}>
-                <div onClick={(pokemon) => {selectPokemon(pokemon)}} className="panel panel-primary">
+                <div onClick={() => {selectPokemon(pokemon)}} className="panel panel-primary">
                     <div className={`panel-heading ${types[0].type.name}`}>
                         <div className="flexrow end">
                             <div className='pokenumber'>
