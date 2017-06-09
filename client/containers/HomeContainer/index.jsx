@@ -24,7 +24,7 @@ class HomeContainer extends Component {
 
     getPokemon (pid) {
         let self = this;
-        let maxId = 9;
+        let maxId = 50;
         
         axios
         .get(`http://pokeapi.co/api/v2/pokemon/${pid}`)

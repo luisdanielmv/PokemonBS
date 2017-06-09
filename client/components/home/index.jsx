@@ -37,7 +37,7 @@ class Home extends Component {
                         />
                     )
                 })}
-                {loading &&
+                {loading && !searchTerm &&
                     <div className={`col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4`}>
                         <div className="panel panel-primary panel-loading">
                             <div className={`panel-body`}>
