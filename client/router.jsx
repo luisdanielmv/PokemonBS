@@ -1,14 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import { HomeContainer } from './containers/';
-import { Nav } from './components/';
+import { Nav, Details} from './components/';
 
 const createRouter = () => (
   <Router>
     <div className='container'>
       <Nav />
-      <Route exact path='/' component={ HomeContainer } />
+      <Route exact path='/' render={ () => <Redirect to='/home' /> } />
+      <Route path='/home' component={ HomeContainer } />
     </div>
   </Router>
 );

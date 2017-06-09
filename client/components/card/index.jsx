@@ -20,16 +20,28 @@ class Card extends Component {
     }
 
     render() {
-        let { id, name, types } = this.props.pokemon;
-        console.log(JSON.stringify(types))
+        let { selectPokemon, pokemon } = this.props;
+        let { id, name, types } = pokemon;
+        
         return (
             <div className={`col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4`}>
-                <div className="panel panel-primary">
+                <div onClick={(pokemon) => {selectPokemon(pokemon)}} className="panel panel-primary">
                     <div className={`panel-heading ${types[0].type.name}`}>
-                        <h2>#{id} {name.toUpperCase()}</h2>
+                        <div className="flexrow end">
+                            <div className='pokenumber'>
+                                <h3>#{id}</h3>
+                            </div>
+                        </div>
+                        <div className="flexrow center">
+                            <figure>
+                                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt={`${name}`} />
+                            </figure>
+                        </div>
                     </div>
                     <div className={`panel-body ${!!(types[1])? types[1].type.name : ''}`}>
-                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt={`${name}`} />
+                        <div className="flexrow center">
+                            <h2>{name.toUpperCase()}</h2>
+                        </div>
                     </div>
                 </div>
             </div>

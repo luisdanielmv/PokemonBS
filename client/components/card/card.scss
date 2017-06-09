@@ -4,9 +4,39 @@
   height: 250px;
   margin: 1rem;
   position: relative;
+  // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.panel:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.card-shadow {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexrow.center {
+  justify-content: center;
+}
+
+.flexrow.end {
+  justify-content: flex-end;
+}
+
+.pokenumber {
+  background-color: #3C3B3F;
+  color: #FFFFFF;
+  border-radius: 100%;
+  padding: 1.5rem 1.5rem 0;
+}
+
+.panel {
+  position: relative;
+}
+
+.panel-footer.absolute {
+  z-index: 100;
+  position: absolute;
+  width: 100%;
 }

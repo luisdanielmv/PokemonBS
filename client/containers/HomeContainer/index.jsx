@@ -10,6 +10,7 @@ class HomeContainer extends Component {
     constructor ( props ) {
         super( props )
         this.getPokemon = this.getPokemon.bind(this);
+        this.selectPokemon = this.selectPokemon.bind(this);
     }
 
     static propTypes = {
@@ -19,7 +20,7 @@ class HomeContainer extends Component {
 
     getPokemon (pid) {
         let self = this;
-        let maxId = 10;
+        let maxId = 20;
         
         axios
         .get(`http://pokeapi.co/api/v2/pokemon/${pid}`)
@@ -44,18 +45,26 @@ class HomeContainer extends Component {
         .catch(err => console.log(err));
     }
 
+    selectPokemon(pokemon) {
+        console.log('select');
+        store.dispatch({
+            type: 'SELECT_POKEMON',
+            selectedPokemon: pokemon
+        });
+    }
+
     componentWillMount () {
         this.getPokemon(1);
     }
 
     render () {
         let { pokemonList } = this.props;
-        console.log('HomeContainer: ' + pokemonList);
         return (
             !!pokemonList ? 
             <Home 
                 pokemonList = { this.props.pokemonList }
                 searchTerm = { this.props.searchTerm }
+                selectPokemon = { this.selectPokemon }
             /> : 
             <h1>Loading...</h1>
         );

@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server",
     "docs": "raml2html docs/api.raml > docs/api.html",
     "nodemon": "nodemon ./api/start.js",
-    "start": "concurrently \"npm run dev\" "
+    "start": "concurrently \"npm run mockapi\" \"npm run dev\""
   },
   "repository": {
     "type": "git",
