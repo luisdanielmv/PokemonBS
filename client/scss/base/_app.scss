@@ -1,0 +1,44 @@
+#root {
+    // height: 100vh;
+    // background-color: #757575;
+}
+
+.panel-primary > .panel-heading {
+    // background-color: #512DA8
+}
+
+.panel-body {
+    // background-color: #673AB7
+}
+
+.panel-primary > .panel-heading.normal, .panel-body.normal{
+    background-color: #A8A878
+}
+
+.panel-primary > .panel-heading.fire, .panel-body.fire{
+    background-color: #F08030
+}
+
+.panel-primary > .panel-heading.fighting, .panel-body.fighting{
+    background-color: #C03028
+}
+
+.panel-primary > .panel-heading.water, .panel-body.water{
+    background-color: #6890F0
+}
+
+.panel-primary > .panel-heading.flying, .panel-body.flying{
+    background-color: #A890F0
+}
+
+.panel-primary > .panel-heading.grass, .panel-body.grass{
+    background-color: #78C850
+}
+
+.panel-primary > .panel-heading.poison, .panel-body.poison{
+    background-color: #A040A0
+}
+
+.panel-primary > .panel-heading.electric, .panel-body.electric{
+    background-color: #F8D030
+}
